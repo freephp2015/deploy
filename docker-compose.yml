@@ -1,5 +1,5 @@
 nginx:
-    build: ./images/nginx
+    image: daocloud.io/serverman/nginx
     container_name: nginx 
     links:
         - php
@@ -23,7 +23,7 @@ nginx:
 #        - ./volumes/logs/php:/data/logs/php
 #    restart: always
 php:
-    build: ./images/php7
+    image: daocloud.io/serverman/php705
     container_name: php
     ports:
         - "9000:9000"
@@ -32,7 +32,7 @@ php:
         - ./volumes/logs/php:/data/logs/php
     restart: always
 mysql:
-    build: ./images/mysql
+    image: daocloud.io/serverman/mysql
     container_name: mysql
     ports:
         - "3306:3306"
@@ -45,7 +45,7 @@ mysql:
         MYSQL_ROOT_PASSWORD: "T41Df!x2L4"
     restart: always
 redis:
-    build: ./images/redis
+    image:  daocloud.io/serverman/redis
     container_name: redis 
     ports:
         - "6379:6379"
@@ -54,7 +54,7 @@ redis:
         - ./volumes/logs/redis:/data/logs/redis
     restart: always
 memcached:
-    build: ./images/memcached
+    image:  daocloud.io/serverman/memcached
     container_name: memcached 
     ports:
         - "11211:11211"
@@ -74,7 +74,7 @@ memcached:
 #        MONGODB_PASS: "Ot936E3g"
 #    restart: always
 mongodb:
-    build: ./images/mongodb3
+    image: daocloud.io/serverman/mongo3
     container_name: mongodb
     ports:
         - "27017:27017"
@@ -84,6 +84,6 @@ mongodb:
     environment:
         AUTH: "yes"
         JOURNALING: "yes"
-        MONGODB_USER: "xxxx"
-        MONGODB_PASS: "541R4evB"
+        MONGODB_USER: "mongo_admin"
+        MONGODB_PASS: "mongo_admin"
     restart: always
