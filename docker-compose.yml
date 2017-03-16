@@ -40,9 +40,9 @@ mysql:
         - ./volumes/db/mysql:/data/db/mysql
         - ./volumes/logs/mysql:/data/logs/mysql
     environment:
-        MYSQL_USER: "xxxx"
-        MYSQL_PASSWORD: "N!F3ABaFui"
-        MYSQL_ROOT_PASSWORD: "T41Df!x2L4"
+        MYSQL_USER: "test"
+        MYSQL_PASSWORD: "12345"
+        MYSQL_ROOT_PASSWORD: "123456"
     restart: always
 redis:
     image:  daocloud.io/serverman/redis
